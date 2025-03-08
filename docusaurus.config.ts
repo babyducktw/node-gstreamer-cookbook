@@ -5,8 +5,8 @@ import { themes as prismThemes } from 'prism-react-renderer';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: `Tintin's Node.js GStreamer Cookbook`,
+  tagline: `🚀 TypeScript + Node-Gtk + GStreamer Examples`,
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -27,8 +27,8 @@ const config: Config = {
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: 'zh-Hant',
+    locales: ['zh-Hant'],
   },
 
   presets: [
@@ -40,26 +40,9 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/babyducktw/node-gstreamer-cookbook/edit/master/',
         },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
-        theme: {
-          customCss: './src/css/custom.css',
-        },
+        blog: false,
       } satisfies Preset.Options,
     ],
   ],
@@ -68,10 +51,10 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'My Site',
+      title: `Tintin's Node.js GStreamer Cookbook`,
       logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        alt: 'Babyduck Logo',
+        src: 'img/babyduck.png',
       },
       items: [
         {
@@ -80,7 +63,6 @@ const config: Config = {
           position: 'left',
           label: 'Tutorial',
         },
-        { to: '/blog', label: 'Blog', position: 'left' },
         {
           href: 'https://github.com/facebook/docusaurus',
           label: 'GitHub',
@@ -104,16 +86,12 @@ const config: Config = {
           title: 'Community',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: 'GStreamer Discourse',
+              href: 'https://discourse.gstreamer.org',
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
+              label: 'Node-Gtk Discord',
+              href: 'https://github.com/romgrk/node-gtk?tab=readme-ov-file#contributing',
             },
           ],
         },
@@ -121,17 +99,13 @@ const config: Config = {
           title: 'More',
           items: [
             {
-              label: 'Blog',
-              to: '/blog',
-            },
-            {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/babyducktw/node-gstreamer-cookbook',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Tintin's Node.js GStreamer Cookbook. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,

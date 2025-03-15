@@ -2,46 +2,26 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# 前言
 
-Let's discover **Docusaurus in less than 5 minutes**.
+你已經是一個 Node.js 開發者，並且正在處理簡易的視訊、音訊流處理。
+直接調用 FFmpeg 或 GStreamer 的 CLI 又無法滿足你的需求。
 
-## Getting Started
+例如涉及到動態管道的構建、動態設置管道元素的屬性、動態切換管道元素、動態監聽管道事件等等。
+這些需要以程式化的方式來處理，而不是靜態的命令行。
 
-Get started by **creating a new site**.
+那麼也許這份文檔對你有幫助。
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+在這份文檔中，我將介紹如何在 Node.js 環境下使用 [node-gtk](https://github.com/romgrk/node-gtk) 透過 [GObject](https://docs.gtk.org/gobject/) 調用 [GStreamer](https://gstreamer.freedesktop.org/) 的 API。
 
-### What you'll need
+## 也許你有更好的選擇
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+如果 FFmpeg 或 GStreamer CLI 能滿足你的需求，那麼我建議你直接使用它們，不用再透過 GObject 調用。
+Simple is the best. 使用 node-gtk 來調用 GStreamer 的方案整題來說學習成本還是挺高的。
 
-## Generate a new site
+對於真正複雜的視訊、音訊流處理，你需要更多的控制權，也許你需要調用一些底層 API 或實做一些自定義的管道元素。
+那麼我建議不要再透過 node-gtk 來處理這些問題，而是直接使用 GStreamer 的 C 或 Rust 處理。
 
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+如果你是一個 Python 開發者，請不要使用 node-gtk 來調用 GStreamer。
+GStreamer 有一個官方 Python 的綁定，討論度更高文檔更全面。
+這邊有一個 [GStreamer 綁定支援的程式語言列表](https://gstreamer.freedesktop.org/bindings/)。

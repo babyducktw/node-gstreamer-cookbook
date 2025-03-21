@@ -18,7 +18,6 @@ sidebar_position: 1
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';
-
 <DocCardList />
 ```
 
@@ -27,9 +26,7 @@ import DocCardList from '@theme/DocCardList';
 如果 FFmpeg 或 GStreamer CLI 能滿足你的需求，那麼我建議你直接使用它們，不用再透過 GObject 調用。
 Simple is the best. 使用 node-gtk 來調用 GStreamer 的方案整題來說學習成本還是挺高的。
 
-對於真正複雜的視訊、音訊流處理，你需要更多的控制權，也許你需要調用一些底層 API 或實做一些自定義的管道元素。
-那麼我建議不要再透過 node-gtk 來處理這些問題，而是直接使用 GStreamer 的 C 或 Rust 處理。
-
-如果你是一個 Python 開發者，請不要使用 node-gtk 來調用 GStreamer。
-GStreamer 有一個官方 Python 的綁定，討論度更高文檔更全面。
+如果你已經是一個 C 或 Python 開發者，請不要使用 node-gtk 來調用 GStreamer。
+C 語言是 GStreamer 的官方語言，Python 也有官方支援的綁定，討論度更高文檔更全面。
+大名鼎鼎的 [NVIDIA DeepStream](https://developer.nvidia.com/deepstream-sdk#section-programming-options) (一個基於 GStreamer 的視訊分析框架) 也同時提供 C 和 Python 來調用 GStreamer。
 這邊有一個 [GStreamer 綁定支援的程式語言列表](https://gstreamer.freedesktop.org/bindings/)。

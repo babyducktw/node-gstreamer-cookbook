@@ -20,18 +20,22 @@ GObject 官方教學文檔: [https://docs.gtk.org/gobject/tutorial.html](https:/
 
 JavaScript 調用 GObject API 有兩個主要的庫：[GJS](https://gitlab.gnome.org/GNOME/gjs) 和 [node-gtk](https://github.com/romgrk/node-gtk)。
 
-這兩個庫分別對應了兩個不同的 JavaScript 執行環境
+這兩個庫分別對應了兩個不同的 JavaScript 執行環境：GJS 和 Node.js。
 
 GJS 是 GNOME 的 JavaScript 執行環境, 常用於 GNOME 桌面環境的應用程式開發。
+地位之於 Windows 上的 C# .NET (執行環境) 和 WinForm, UWP (應用程式框架)。
+在 Linux 上的則是 JavaScript 的 GJS (執行環境) 和 GTK (應用程式框架)。
 
-node-gtk 則是對應常見的 Node.js 環境。我們這裡只討論 node-gtk。
+Node.js 原生不支援 GObject API，所以我們會使用 node-gtk 來調用 GObject API。
+
+在之後的範例中，我們會使用 node-gtk。
 
 ## GObject Introspection Repository (GIR)
 
 GIR 是用來橋接原生 C 語言函式庫的中介層。
 
 GIR 會將原生 C 語言函式庫的 API 轉換成一個 XML 文件 (.gir) 或二進制文件 (.typelib)。
-類似於 TypeScript 的 .d.ts 文件。
+作用類似於 TypeScript 的 .d.ts 文件。
 
 [ts-for-gir](https://github.com/gjsify/ts-for-gir) 這個庫可以將 GIR 文件轉換成 TypeScript 類型定義文件。
 讓 TypeScript 環境下調用 GObject API 就變得更加容易。

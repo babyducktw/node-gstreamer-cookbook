@@ -60,7 +60,7 @@ void (async () => {
           answerText,
         );
       } catch (error) {
-        console.error(error);
+        console.error(error instanceof Error ? error.stack : error);
       }
     })();
   });
@@ -88,7 +88,7 @@ void (async () => {
         try {
           await addIceCandidate(webrtc2, { sdpMLineIndex, candidate });
         } catch (error) {
-          console.error(error);
+          console.error(error instanceof Error ? error.stack : error);
         }
       });
     },
@@ -101,7 +101,7 @@ void (async () => {
         try {
           await addIceCandidate(webrtc1, { sdpMLineIndex, candidate });
         } catch (error) {
-          console.error(error);
+          console.error(error instanceof Error ? error.stack : error);
         }
       });
     },
@@ -299,7 +299,7 @@ webrtc1.connect('on-negotiation-needed', () => {
         answerText,
       );
     } catch (error) {
-      console.error(error);
+      console.error(error instanceof Error ? error.stack : error);
     }
   })();
 });

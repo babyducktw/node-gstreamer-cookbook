@@ -90,7 +90,7 @@ void (async () => {
         } catch (error) {
           console.error(error instanceof Error ? error.stack : error);
         }
-      });
+      })();
     },
   );
 
@@ -103,7 +103,7 @@ void (async () => {
         } catch (error) {
           console.error(error instanceof Error ? error.stack : error);
         }
-      });
+      })();
     },
   );
 

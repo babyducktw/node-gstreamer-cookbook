@@ -365,7 +365,9 @@ async function setLocalDescription(
 ```
 
 設定 local description 的方法，透過 `set-local-description` 事件來發起。
+
 其中第二個參數是 WebRTCSessionDescription 物件，用來設定 sdp。
+
 建立 WebRTCSessionDescription 物件時，需要指定 sdp 的類型，OFFER 或 ANSWER。
 
 ### 持續監聽事件
@@ -433,8 +435,11 @@ WebRTC 需要許多非同步操作，一旦 `GLib.MainLoop.run()` 開始運行�
 這樣就可以在事件發生時執行相應的操作。
 
 其中 `await new Promise((resolve) => setImmediate(resolve));` 是必要的，因為 `bus.timedPopFiltered()` 也是一個阻塞操作。
+
 `await new Promise((resolve) => setImmediate(resolve));` 會讓後續的程式碼在下一個事件循環中執行。
+
 `bus.timedPopFiltered()` 的第一個參數是超時時間，這裡設定為 100 毫秒。如果在 100 毫秒內沒有事件發生，則會返回 undefined，這時就可以繼續執行下一個迴圈。
+
 這樣就解決了 GLib.MainLoop 和 JavaScript 的事件循環無法結合的問題。
 
 

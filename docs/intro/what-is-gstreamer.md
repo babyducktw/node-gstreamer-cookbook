@@ -19,10 +19,8 @@ GStreamer 也更容易以程式化的方式來編寫，因為 GStreamer 提供�
 
 你只要用過 Ubuntu 或 Fedora 的桌面環境，就已經使用過 GStreamer 了。
 
-GNOME 的桌面環境使用 GStreamer 來繪製畫面、播放音訊。[資料來源](https://en.wikipedia.org/wiki/GNOME#Development_platform)
+[GNOME 的桌面環境](https://en.wikipedia.org/wiki/GNOME#Development_platform)使用 GStreamer 來繪製畫面、播放音訊。
 也鼓勵 GNOME 應用程式使用 GNOME 應用的開發者使用 GStreamer。
-
-## Plugin
 
 ## 開源協議
 
